@@ -3,55 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>لعبتي السهلة 🎮</title>
+  <title>لعبتي السهلة<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة التخمين 🎮</title>
   <style>
     body {
-      margin: 0;
       font-family: "Tajawal", Arial, sans-serif;
-      background: linear-gradient(135deg, #1a237e, #0d47a1);
+      background: linear-gradient(135deg, #0d47a1, #1a237e);
       color: white;
       text-align: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 40px;
     }
     h1 {
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px #00e676;
+      color: #ffc107;
+      text-shadow: 0 0 10px #ff9800;
     }
-    #score {
-      font-size: 24px;
-      margin: 15px 0;
+    input {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
+      width: 80px;
     }
     button {
-      padding: 20px 40px;
-      font-size: 20px;
+      margin: 10px;
+      padding: 12px 25px;
       background: #00e676;
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
+      color: black;
+      font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
-      font-weight: bold;
     }
     button:hover {
       background: #00c853;
-      transform: scale(1.1);
+      transform: scale(1.05);
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>🎮 لعبة النقاط</h1>
-  <div id="score">النقاط: 0</div>
-  <button onclick="addPoint()">اضغط هنا</button>
+  <h1>🎮 لعبة التخمين</h1>
+  <p>الكمبيوتر اختار رقم بين <strong>1 و 20</strong>. عندك 5 محاولات باش تجيب الصحيح!</p>
+  
+  <input type="number" id="guess" min="1" max="20" placeholder="1-20">
+  <br>
+  <button onclick="checkGuess()">جرّب</button>
+  <button onclick="restartGame()">إعادة</button>
+  
+  <div id="message"></div>
 
   <script>
-    let score = 0;
-    function addPoint() {
-      score++;
-      document.getElementById("score").innerText = "النقاط: " + score;
+    let secretNumber;
+    let attempts;
+    const maxAttempts = 5;
+
+    function startGame() {
+      secretNumber = Math.floor(Math.random() * 20) + 1;
+      attempts = 0;
+      document.getElementById("message").innerText = "";
+      document.getElementById("guess").value = "";
     }
+
+    function checkGuess() {
+      const guess = Number(document.getElementById("guess").value);
+      if (!guess || guess < 1 || guess > 20) {
+        document.getElementById("message").innerText = "⚠️ دخل رقم بين 1 و 20!";
+        return;
+      }
+
+      attempts++;
+      if (guess === secretNumber) {
+        document.getElementById("message").innerText = "🎉 مبروك! صبتي الرقم فـ " + attempts + " محاولة!";
+      } else if (attempts >= maxAttempts) {
+        document.getElementById("message").innerText = "❌ خسرت! الرقم الصحيح هو: " + secretNumber;
+      } else if (guess < secretNumber) {
+        document.getElementById("message").innerText = "⬆️ الرقم أكبر!";
+      } else {
+        document.getElementById("message").innerText = "⬇️ الرقم أصغر!";
+      }
+    }
+
+    function restartGame() {
+      startGame();
+    }
+
+    // تشغيل اللعبة أول مرة
+    startGame();
   </script>
 </body>
 </html>
