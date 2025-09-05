@@ -3,56 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي للألعاب</title>
+  <title>لعبتي السهلة 🎮</title>
   <style>
     body {
       margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
+      font-family: "Tajawal", Arial, sans-serif;
+      background: linear-gradient(135deg, #1a237e, #0d47a1);
+      color: white;
       text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    header {
-      padding: 50px 20px;
+    h1 {
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00e676;
     }
-    header h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+    #score {
+      font-size: 24px;
+      margin: 15px 0;
     }
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #ff9800;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
+    button {
+      padding: 20px 40px;
+      font-size: 20px;
+      background: #00e676;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
       transition: 0.3s;
+      font-weight: bold;
     }
-    .btn:hover {
-      background: #ffc107;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: rgba(0,0,0,0.2);
+    button:hover {
+      background: #00c853;
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🎮 مرحباً بكم في لعبي</h1>
-    <p>هنا غادي نشارك معاكم الألعاب والتجارب ديالي فالبرمجة 🚀</p>
-    <a href="#" class="btn">إلعب الآن</a>
-  </header>
+  <h1>🎮 لعبة النقاط</h1>
+  <div id="score">النقاط: 0</div>
+  <button onclick="addPoint()">اضغط هنا</button>
 
-  <footer>
-    <p>© 2025 موقعي للألعاب - جميع الحقوق محفوظة</p>
-  </footer>
+  <script>
+    let score = 0;
+    function addPoint() {
+      score++;
+      document.getElementById("score").innerText = "النقاط: " + score;
+    }
+  </script>
 </body>
 </html>
