@@ -1,351 +1,234 @@
-<!DOCTYPE html>
-<html lang="ar">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>البورتفوليو + ألعاب 🎮</title>
-    <style>
-      body {
-        font-family: "Segoe UI", Tahoma, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f5f7fa;
-        color: #333;
-      }
-      header {
-        background: linear-gradient(135deg, #4facfe, #00f2fe);
-        color: white;
-        text-align: center;
-        padding: 60px 20px;
-      }
-      header h1 {
-        margin: 0;
-        font-size: 2.5rem;
-      }
-      nav {
-        background: white;
-        padding: 15px;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-      nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
-        color: #333;
-      }
-      section {
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 0 20px;
-      }
-      section h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #4facfe;
-      }
-      .card {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-      }
-      footer {
-        background: #333;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-      }
-      /* 🎮 ستايل الألعاب */
-      .game-board {
-        display: grid;
-        grid-template-columns: repeat(3, 80px);
-        gap: 5px;
-        justify-content: center;
-        margin: 20px auto;
-      }
-      .cell {
-        width: 80px;
-        height: 80px;
-        background: #e3e3e3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        cursor: pointer;
-        border-radius: 8px;
-      }
-      .guess-box {
-        text-align: center;
-      }
-      .guess-box input {
-        padding: 10px;
-        margin: 10px;
-        width: 80px;
-        font-size: 1rem;
-      }
-      canvas {
-        display: block;
-        margin: 0 auto;
-        background: #111;
-        border: 2px solid #4facfe;
-        border-radius: 8px;
-      }
-      .memory-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 80px);
-        gap: 10px;
-        justify-content: center;
-      }
-      .memory-card {
-        width: 80px;
-        height: 80px;
-        background: #4facfe;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>مرحبا 👋</h1>
-      <p>بورتفوليو + ألعاب ممتعة 🎮</p>
-    </header>
 
-    <nav>
-      <a href="#about">عنّي</a>
-      <a href="#projects">المشاريع</a>
-      <a href="#games">الألعاب</a>
-      <a href="#contact">التواصل</a>
-    </nav>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Games Download</title>
+  <style>
+    /* --- Global Styles --- */
+    * {margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+    body {
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e, #0d0d1a);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffe5;
+      text-shadow: 0 0 10px #00ffe5;
+    }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+    .game-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
+    }
+    .game-card:hover {
+      transform: translateY(-8px);
+    }
+    .game-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .game-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .game-info h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #ffcc00;
+    }
+    .stars {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+    .download-btn {
+      background: #00ffe5;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #00bfa5;
+    }
+    .video-section {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+    }
+    .video-section iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 15px;
+      border: none;
+    }
+    footer {
+      margin-top: auto;
+      padding: 15px;
+      font-size: 0.9rem;
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔥 Top Trending Games 🔥</h1>
+    <p>Download your favorite games now!</p>
+  </header>
 
-    <section id="about">
-      <h2>عنّي</h2>
-      <div class="card">
-        <p>
-          إسمي [اسمك]. مطوّر ويب كنعشق البرمجة والألعاب. هاد الموقع فيه أعمالي
-          وبعض الألعاب باش تستمتع 😃.
-        </p>
+  <!-- Games Grid -->
+  <section class="games-grid">
+    <!-- Game Card Example -->
+    <div class="game-card">
+      <img src="https://i.ibb.co/KFgHJtF/freefire.jpg" alt="Free Fire">
+      <div class="game-info">
+        <h3>Free Fire</h3>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
       </div>
-    </section>
+    </div>
 
-    <section id="projects">
-      <h2>المشاريع</h2>
-      <div class="card">
-        <h3>📌 مشروع 1</h3>
-        <p>وصف قصير على المشروع الأول.</p>
+    <div class="game-card">
+      <img src="https://i.ibb.co/Zxhjg1n/pubg.jpg" alt="PUBG">
+      <div class="game-info">
+        <h3>PUBG Mobile</h3>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
       </div>
-    </section>
+    </div>
 
-    <section id="games">
-      <h2>🎮 الألعاب</h2>
-
-      <!-- XO -->
-      <div class="card">
-        <h3>لعبة XO</h3>
-        <div class="game-board" id="board"></div>
-        <p id="status"></p>
-        <button onclick="resetBoard()">إعادة اللعب</button>
+    <div class="game-card">
+      <img src="https://i.ibb.co/hmMw1jP/pes.jpg" alt="PES">
+      <div class="game-info">
+        <h3>eFootball PES</h3>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
       </div>
+    </div>
 
-      <!-- Guess -->
-      <div class="card">
-        <h3>خمن الرقم 🔢</h3>
-        <div class="guess-box">
-          <input type="number" id="guess" min="1" max="20" />
-          <button onclick="checkGuess()">تحقق</button>
-          <p id="guessResult"></p>
-        </div>
+    <div class="game-card">
+      <img src="https://i.ibb.co/FbKHxqL/fortnite.jpg" alt="Fortnite">
+      <div class="game-info">
+        <h3>Fortnite</h3>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
       </div>
+    </div>
 
-      <!-- Snake -->
-      <div class="card">
-        <h3>🐍 لعبة Snake</h3>
-        <canvas id="snakeCanvas" width="300" height="300"></canvas>
+    <div class="game-card">
+      <img src="https://i.ibb.co/Lr1MJX7/cod.jpg" alt="Call of Duty">
+      <div class="game-info">
+        <h3>COD Warzone</h3>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
       </div>
+    </div>
 
-      <!-- Memory -->
-      <div class="card">
-        <h3>🧠 Memory Game</h3>
-        <div class="memory-grid" id="memoryGrid"></div>
+    <div class="game-card">
+      <img src="https://i.ibb.co/9sMQtJJ/minecraft.jpg" alt="Minecraft">
+      <div class="game-info">
+        <h3>Minecraft</h3>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
       </div>
-    </section>
+    </div>
 
-    <section id="contact">
-      <h2>التواصل</h2>
-      <div class="card">
-        <p>📧 Email: youremail@example.com</p>
-        <p>
-          💼 GitHub:
-          <a href="https://github.com/username" target="_blank"
-            >github.com/username</a
-          >
-        </p>
+    <div class="game-card">
+      <img src="https://i.ibb.co/Lr3Jw8D/gta.jpg" alt="GTA V">
+      <div class="game-info">
+        <h3>GTA V</h3>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
       </div>
-    </section>
+    </div>
 
-    <footer>
-      <p>© 2025 جميع الحقوق محفوظة - [اسمك]</p>
-    </footer>
+    <div class="game-card">
+      <img src="https://i.ibb.co/LRksy5M/valorant.jpg" alt="Valorant">
+      <div class="game-info">
+        <h3>Valorant</h3>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
+      </div>
+    </div>
 
-    <script>
-      /* XO */
-      const board = document.getElementById("board");
-      const statusText = document.getElementById("status");
-      let cells = Array(9).fill("");
-      let currentPlayer = "X";
-      let gameOver = false;
-      function renderBoard() {
-        board.innerHTML = "";
-        cells.forEach((val, i) => {
-          const cell = document.createElement("div");
-          cell.className = "cell";
-          cell.textContent = val;
-          cell.onclick = () => makeMove(i);
-          board.appendChild(cell);
-        });
-      }
-      function makeMove(i) {
-        if (cells[i] || gameOver) return;
-        cells[i] = currentPlayer;
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        checkWinner();
-        renderBoard();
-      }
-      function checkWinner() {
-        const wins = [
-          [0, 1, 2],
-          [3, 4, 5],
-          [6, 7, 8],
-          [0, 3, 6],
-          [1, 4, 7],
-          [2, 5, 8],
-          [0, 4, 8],
-          [2, 4, 6],
-        ];
-        wins.forEach((combo) => {
-          const [a, b, c] = combo;
-          if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
-            statusText.textContent = `🎉 الفائز هو ${cells[a]}!`;
-            gameOver = true;
-          }
-        });
-      }
-      function resetBoard() {
-        cells = Array(9).fill("");
-        currentPlayer = "X";
-        gameOver = false;
-        statusText.textContent = "";
-        renderBoard();
-      }
-      renderBoard();
+    <div class="game-card">
+      <img src="https://i.ibb.co/ZB6jnbj/lol.jpg" alt="League of Legends">
+      <div class="game-info">
+        <h3>League of Legends</h3>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
+      </div>
+    </div>
 
-      /* Guess */
-      const secretNumber = Math.floor(Math.random() * 20) + 1;
-      function checkGuess() {
-        const guess = Number(document.getElementById("guess").value);
-        const result = document.getElementById("guessResult");
-        if (!guess) result.textContent = "⛔ دخل رقم!";
-        else if (guess === secretNumber) result.textContent = "🎉 ربحت!";
-        else if (guess > secretNumber) result.textContent = "⬇️ أصغر!";
-        else result.textContent = "⬆️ أكبر!";
-      }
+    <div class="game-card">
+      <img src="https://i.ibb.co/WtFYK64/apex.jpg" alt="Apex Legends">
+      <div class="game-info">
+        <h3>Apex Legends</h3>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
+      </div>
+    </div>
 
-      /* Snake */
-      const canvas = document.getElementById("snakeCanvas");
-      const ctx = canvas.getContext("2d");
-      let snake = [{ x: 150, y: 150 }];
-      let dx = 10,
-        dy = 0;
-      let food = {
-        x: Math.floor(Math.random() * 30) * 10,
-        y: Math.floor(Math.random() * 30) * 10,
-      };
-      function drawSnake() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "lime";
-        snake.forEach((part) => ctx.fillRect(part.x, part.y, 10, 10));
-        ctx.fillStyle = "red";
-        ctx.fillRect(food.x, food.y, 10, 10);
-      }
-      function moveSnake() {
-        const head = { x: snake[0].x + dx, y: snake[0].y + dy };
-        snake.unshift(head);
-        if (head.x === food.x && head.y === food.y) {
-          food = {
-            x: Math.floor(Math.random() * 30) * 10,
-            y: Math.floor(Math.random() * 30) * 10,
-          };
-        } else {
-          snake.pop();
-        }
-      }
-      function gameLoop() {
-        moveSnake();
-        drawSnake();
-      }
-      setInterval(gameLoop, 100);
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowUp" && dy === 0) {
-          dx = 0;
-          dy = -10;
-        } else if (e.key === "ArrowDown" && dy === 0) {
-          dx = 0;
-          dy = 10;
-        } else if (e.key === "ArrowLeft" && dx === 0) {
-          dx = -10;
-          dy = 0;
-        } else if (e.key === "ArrowRight" && dx === 0) {
-          dx = 10;
-          dy = 0;
-        }
-      });
+    <div class="game-card">
+      <img src="https://i.ibb.co/RN7mtZP/roblox.jpg" alt="Roblox">
+      <div class="game-info">
+        <h3>Roblox</h3>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
+      </div>
+    </div>
 
-      /* Memory */
-      const grid = document.getElementById("memoryGrid");
-      const emojis = ["🍎", "🍌", "🍇", "🍉", "🍒", "🍎", "🍌", "🍇", "🍉", "🍒"];
-      let cards = [];
-      let firstCard, secondCard;
-      function shuffle(array) {
-        return array.sort(() => Math.random() - 0.5);
-      }
-      function renderMemory() {
-        grid.innerHTML = "";
-        cards = shuffle([...emojis]);
-        cards.forEach((emoji, i) => {
-          const card = document.createElement("div");
-          card.className = "memory-card";
-          card.dataset.value = emoji;
-          card.textContent = "?";
-          card.onclick = () => flipCard(card);
-          grid.appendChild(card);
-        });
-      }
-      function flipCard(card) {
-        if (card.textContent !== "?") return;
-        card.textContent = card.dataset.value;
-        if (!firstCard) firstCard = card;
-        else if (!secondCard) {
-          secondCard = card;
-          if (firstCard.dataset.value === secondCard.dataset.value) {
-            firstCard = secondCard = null;
-          } else {
-            setTimeout(() => {
-              firstCard.textContent = "?";
-              secondCard.textContent = "?";
-              firstCard = secondCard = null;
-            }, 800);
-          }
-        }
-      }
-      renderMemory();
-    </script>
-  </body>
-  </html>
+    <div class="game-card">
+      <img src="https://i.ibb.co/SK7gMrv/cs2.jpg" alt="CS2">
+      <div class="game-info">
+        <h3>Counter-Strike 2</h3>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button class="download-btn" onclick="openLocker()">Download Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <h2>🎥 Gameplay Preview</h2>
+    <iframe src="https://www.youtube.com/embed/2aQyku4yqR8" allowfullscreen></iframe>
+  </section>
+
+  <footer>
+    © 2025 Gaming Hub. All rights reserved.
+  </footer>
+
+  <script>
+    function openLocker() {
+      // هنا دير رابط الكونتنت لوكر ديالك
+      window.location.href = "https://your-content-locker-link.com";
+    }
+  </script>
+</body>
+</html>
