@@ -9,4 +9,111 @@
     * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
 
     body {
-      background: linear-gradient(180deg, #000 0%, #0a0f1
+      background: linear-gradient(180deg, #000 0%, #0a0f1f 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 20px 0;
+      color: #00ffe5;
+      text-shadow: 0 0 10px #00ffe5;
+      text-align: center;
+    }
+
+    /* ===== Grid ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
+      width: min(1200px, 95%);
+      margin: 20px auto;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background: #111827;
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 12px;
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0, 255, 229, 0.25);
+    }
+    .thumb {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .stars {
+      font-size: 0.9rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    /* ===== Button ===== */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.25s;
+    }
+    .btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 Top Games Download 🔥</h1>
+  <div class="grid" id="gamesGrid"></div>
+
+  <script>
+    const LOCKER_URL = "https://your-content-locker-link.com"; // <-- حط هنا الكونتنت لوكر ديالك
+
+    const games = [
+      {title:"Free Fire", rating:"⭐ 4.8 • 1M+", cover:"https://upload.wikimedia.org/wikipedia/en/5/51/Garena_Free_Fire.png"},
+      {title:"PUBG Mobile", rating:"⭐ 4.9 • 5M+", cover:"https://upload.wikimedia.org/wikipedia/en/7/7e/PUBG_Cover.jpg"},
+      {title:"Fortnite", rating:"⭐ 4.8 • 3M+", cover:"https://upload.wikimedia.org/wikipedia/en/0/0e/FortniteCover.jpg"},
+      {title:"Minecraft", rating:"⭐ 5.0 • 10M+", cover:"https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"},
+      {title:"GTA V", rating:"⭐ 5.0 • 20M+", cover:"https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png"},
+      {title:"Valorant", rating:"⭐ 4.7 • 2M+", cover:"https://upload.wikimedia.org/wikipedia/en/f/fb/Valorant_cover_art.jpg"},
+      {title:"Roblox", rating:"⭐ 4.3 • 15M+", cover:"https://upload.wikimedia.org/wikipedia/en/3/39/Roblox_Logo_2022.jpg"},
+      {title:"Apex Legends", rating:"⭐ 4.6 • 4M+", cover:"https://upload.wikimedia.org/wikipedia/en/d/db/Apex_legends_cover.jpg"},
+      {title:"Call of Duty: Warzone", rating:"⭐ 4.6 • 8M+", cover:"https://upload.wikimedia.org/wikipedia/en/3/3a/Call_of_Duty_Warzone_cover.jpg"},
+      {title:"League of Legends", rating:"⭐ 4.9 • 12M+", cover:"https://upload.wikimedia.org/wikipedia/en/f/f2/League_of_Legends_cover.jpg"},
+    ];
+
+    const grid = document.getElementById("gamesGrid");
+
+    games.forEach(game => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${game.cover}" alt="${game.title}" class="thumb" loading="lazy">
+        <div class="title">${game.title}</div>
+        <div class="stars">${game.rating}</div>
+        <a class="btn" href="${LOCKER_URL}">Download</a>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
