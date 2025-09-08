@@ -1,119 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Games Download</title>
-  <style>
-    /* ===== Reset ===== */
-    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-
-    body {
-      background: linear-gradient(180deg, #000 0%, #0a0f1f 100%);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      margin: 20px 0;
-      color: #00ffe5;
-      text-shadow: 0 0 10px #00ffe5;
-      text-align: center;
-    }
-
-    /* ===== Grid ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 18px;
-      width: min(1200px, 95%);
-      margin: 20px auto;
-    }
-
-    /* ===== Card ===== */
-    .card {
-      background: #111827;
-      border-radius: 14px;
-      overflow: hidden;
-      padding: 12px;
-      text-align: center;
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 25px rgba(0, 255, 229, 0.25);
-    }
-    .thumb {
-      width: 100%;
-      aspect-ratio: 1/1;
-      border-radius: 10px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-    .title {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-    .stars {
-      font-size: 0.9rem;
-      color: #ffcc00;
-      margin-bottom: 10px;
-    }
-
-    /* ===== Button ===== */
-    .btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: opacity 0.25s;
-    }
-    .btn:hover {
-      opacity: 0.8;
-    }
-  </style>
+  <title>أفضل ألعاب الموبايل 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>🔥 Top Games Download 🔥</h1>
-  <div class="grid" id="gamesGrid"></div>
+<body class="bg-gray-900 text-white font-sans">
 
+  <!-- Hero Section -->
+  <section class="text-center py-12 bg-gradient-to-r from-indigo-600 to-purple-700">
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-4">🎮 اكتشف أفضل ألعاب الموبايل 2025</h1>
+    <p class="text-lg text-gray-100">حمل الألعاب الأكثر رواجاً في أوروبا والعالم مجانا</p>
+  </section>
+
+  <!-- Games Grid -->
+  <section id="games" class="p-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] bg-gray-900">
+    
+    <!-- Game Card -->
+    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition">
+      <img src="https://i.ibb.co/pz1n1hJ/freefire.jpg" alt="Free Fire" class="w-full h-40 object-cover">
+      <div class="p-3">
+        <h3 class="text-lg font-bold">Free Fire</h3>
+        <p class="text-sm text-gray-300 flex items-center">⭐ 4.7 • 1M+</p>
+        <button onclick="openLocker()" class="mt-3 w-full bg-gradient-to-r from-indigo-500 to-blue-500 py-2 rounded-xl font-semibold hover:opacity-90">
+          Download
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition">
+      <img src="https://i.ibb.co/82fy8wM/pes.jpg" alt="PES eFootball" class="w-full h-40 object-cover">
+      <div class="p-3">
+        <h3 class="text-lg font-bold">PES eFootball</h3>
+        <p class="text-sm text-gray-300 flex items-center">⭐ 4.6 • 900K+</p>
+        <button onclick="openLocker()" class="mt-3 w-full bg-gradient-to-r from-indigo-500 to-blue-500 py-2 rounded-xl font-semibold hover:opacity-90">
+          Download
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition">
+      <img src="https://i.ibb.co/WtH2x7p/pubg.jpg" alt="PUBG Mobile" class="w-full h-40 object-cover">
+      <div class="p-3">
+        <h3 class="text-lg font-bold">PUBG Mobile</h3>
+        <p class="text-sm text-gray-300">⭐ 4.8 • 2M+</p>
+        <button onclick="openLocker()" class="mt-3 w-full bg-gradient-to-r from-indigo-500 to-blue-500 py-2 rounded-xl font-semibold hover:opacity-90">
+          Download
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition">
+      <img src="https://i.ibb.co/JcrpXqj/fortnite.jpg" alt="Fortnite" class="w-full h-40 object-cover">
+      <div class="p-3">
+        <h3 class="text-lg font-bold">Fortnite</h3>
+        <p class="text-sm text-gray-300">⭐ 4.7 • 1.5M+</p>
+        <button onclick="openLocker()" class="mt-3 w-full bg-gradient-to-r from-indigo-500 to-blue-500 py-2 rounded-xl font-semibold hover:opacity-90">
+          Download
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition">
+      <img src="https://i.ibb.co/FYhYh3K/clash.jpg" alt="Clash Royale" class="w-full h-40 object-cover">
+      <div class="p-3">
+        <h3 class="text-lg font-bold">Clash Royale</h3>
+        <p class="text-sm text-gray-300">⭐ 4.5 • 800K+</p>
+        <button onclick="openLocker()" class="mt-3 w-full bg-gradient-to-r from-indigo-500 to-blue-500 py-2 rounded-xl font-semibold hover:opacity-90">
+          Download
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition">
+      <img src="https://i.ibb.co/jDTsnVY/amongus.jpg" alt="Among Us" class="w-full h-40 object-cover">
+      <div class="p-3">
+        <h3 class="text-lg font-bold">Among Us</h3>
+        <p class="text-sm text-gray-300">⭐ 4.6 • 700K+</p>
+        <button onclick="openLocker()" class="mt-3 w-full bg-gradient-to-r from-indigo-500 to-blue-500 py-2 rounded-xl font-semibold hover:opacity-90">
+          Download
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center p-6 mt-10">
+    <p>© 2025 أفضل ألعاب الموبايل - جميع الحقوق محفوظة</p>
+  </footer>
+
+  <!-- Content Locker -->
   <script>
-    const LOCKER_URL = "https://your-content-locker-link.com"; // <-- حط هنا الكونتنت لوكر ديالك
-
-    const games = [
-      {title:"Free Fire", rating:"⭐ 4.8 • 1M+", cover:"https://upload.wikimedia.org/wikipedia/en/5/51/Garena_Free_Fire.png"},
-      {title:"PUBG Mobile", rating:"⭐ 4.9 • 5M+", cover:"https://upload.wikimedia.org/wikipedia/en/7/7e/PUBG_Cover.jpg"},
-      {title:"Fortnite", rating:"⭐ 4.8 • 3M+", cover:"https://upload.wikimedia.org/wikipedia/en/0/0e/FortniteCover.jpg"},
-      {title:"Minecraft", rating:"⭐ 5.0 • 10M+", cover:"https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"},
-      {title:"GTA V", rating:"⭐ 5.0 • 20M+", cover:"https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png"},
-      {title:"Valorant", rating:"⭐ 4.7 • 2M+", cover:"https://upload.wikimedia.org/wikipedia/en/f/fb/Valorant_cover_art.jpg"},
-      {title:"Roblox", rating:"⭐ 4.3 • 15M+", cover:"https://upload.wikimedia.org/wikipedia/en/3/39/Roblox_Logo_2022.jpg"},
-      {title:"Apex Legends", rating:"⭐ 4.6 • 4M+", cover:"https://upload.wikimedia.org/wikipedia/en/d/db/Apex_legends_cover.jpg"},
-      {title:"Call of Duty: Warzone", rating:"⭐ 4.6 • 8M+", cover:"https://upload.wikimedia.org/wikipedia/en/3/3a/Call_of_Duty_Warzone_cover.jpg"},
-      {title:"League of Legends", rating:"⭐ 4.9 • 12M+", cover:"https://upload.wikimedia.org/wikipedia/en/f/f2/League_of_Legends_cover.jpg"},
-    ];
-
-    const grid = document.getElementById("gamesGrid");
-
-    games.forEach(game => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <img src="${game.cover}" alt="${game.title}" class="thumb" loading="lazy">
-        <div class="title">${game.title}</div>
-        <div class="stars">${game.rating}</div>
-        <a class="btn" href="${LOCKER_URL}">Download</a>
-      `;
-      grid.appendChild(card);
-    });
+    function openLocker() {
+      // هنا تحط الكود ديال الكونتنت لوكر ديالك
+      alert("⚠️ يجب إكمال العرض لبدء التنزيل!");
+    }
   </script>
+
 </body>
-</html>
+  </html>
