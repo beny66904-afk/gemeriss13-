@@ -24,16 +24,41 @@
 
   <!-- Script -->
   <script>
-    // Games List (50 games)
     const games = [
-      {name: "Free Fire", rating: "4.7", downloads: "+1M", img: "https://upload.wikimedia.org/wikipedia/en/d/d3/Free_Fire_logo.png"},
-      {name: "eFootball PES", rating: "4.6", downloads: "+900K", img: "https://upload.wikimedia.org/wikipedia/en/2/20/FIFA_Mobile.png"},
-      {name: "PUBG Mobile", rating: "4.8", downloads: "+2M", img: "https://upload.wikimedia.org/wikipedia/en/9/9a/PUBG_New_State_logo.png"},
-      {name: "Fortnite", rating: "4.7", downloads: "+1.5M", img: "https://upload.wikimedia.org/wikipedia/en/0/0e/FortniteLogo.jpg"},
-      {name: "Clash Royale", rating: "4.5", downloads: "+800K", img: "https://upload.wikimedia.org/wikipedia/en/2/2f/Clash_Royale_logo.png"},
-      {name: "Roblox", rating: "4.6", downloads: "+129M", img: "https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_2022_logo.svg"},
-      {name: "Candy Crush Saga", rating: "4.6", downloads: "+87M", img: "https://upload.wikimedia.org/wikipedia/en/0/0b/Candy_Crush_Saga_logo.svg"},
-      {name: "Royal Match", rating: "4.7", downloads: "+55M", img: "https://upload.wikimedia.org/wikipedia/en/5/5e/Royal_Match_icon.png"},
-      {name: "Among Us", rating: "4.6", downloads: "+700K", img: "https://upload.wikimedia.org/wikipedia/en/f/f0/Among_Us_cover_art.jpg"},
-      {name: "Call of Duty Mobile", rating: "4.8", downloads: "+3M", img: "https://upload.wikimedia.org/wikipedia/en/0/06/Call_of_Duty_Mobile_app_logo.png"},
-      {name: "Brawl Stars", rating: "4.6", downloads: "+2M", img: "https://upload.wikimedia.org/w
+      {name: "Free Fire", rating: "4.7", downloads: "+1M", img: "https://1000logos.net/wp-content/uploads/2021/05/Garena-Free-Fire-logo.png"},
+      {name: "PUBG Mobile", rating: "4.8", downloads: "+2M", img: "https://1000logos.net/wp-content/uploads/2023/01/PUBG-logo.png"},
+      {name: "Fortnite", rating: "4.7", downloads: "+1.5M", img: "https://1000logos.net/wp-content/uploads/2018/07/Fortnite-Logo.png"},
+      {name: "Clash Royale", rating: "4.5", downloads: "+800K", img: "https://1000logos.net/wp-content/uploads/2018/07/Clash-Royale-Logo.png"},
+      {name: "Roblox", rating: "4.6", downloads: "+129M", img: "https://1000logos.net/wp-content/uploads/2017/06/Roblox-logo.png"},
+      {name: "Among Us", rating: "4.6", downloads: "+700K", img: "https://1000logos.net/wp-content/uploads/2021/11/Among-Us-logo.png"},
+      {name: "Minecraft PE", rating: "4.9", downloads: "+10M", img: "https://1000logos.net/wp-content/uploads/2017/05/Minecraft-Logo.png"},
+      {name: "Asphalt 9", rating: "4.7", downloads: "+4M", img: "https://1000logos.net/wp-content/uploads/2021/12/Asphalt-Logo.png"},
+      {name: "Stumble Guys", rating: "4.6", downloads: "+3M", img: "https://1000logos.net/wp-content/uploads/2023/05/Stumble-Guys-Logo.png"},
+      {name: "Call of Duty Mobile", rating: "4.8", downloads: "+3M", img: "https://1000logos.net/wp-content/uploads/2017/05/Call-of-Duty-logo.png"}
+    ];
+
+    const gamesContainer = document.getElementById("games");
+
+    // Debug
+    console.log("Loaded games:", games.length);
+
+    games.forEach(game => {
+      const card = `
+        <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition">
+          <img src="${game.img}" alt="${game.name}" class="w-full h-32 object-contain bg-black"/>
+          <div class="p-3">
+            <h3 class="text-lg font-bold">${game.name}</h3>
+            <p class="text-sm text-gray-300">⭐ ${game.rating} • ${game.downloads}</p>
+            <button onclick="openLocker()" class="mt-3 w-full bg-gradient-to-r from-indigo-500 to-blue-500 py-2 rounded-xl font-semibold hover:opacity-90">Download</button>
+          </div>
+        </div>
+      `;
+      gamesContainer.innerHTML += card;
+    });
+
+    function openLocker() {
+      alert("⏳ Complete the offer to start downloading!");
+    }
+  </script>
+</body>
+</html>
