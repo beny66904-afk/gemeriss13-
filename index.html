@@ -1,158 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Exclusive Games</title>
+  <title>Top Trending Games</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      background: url("https://wallpapercave.com/wp/wp9118026.jpg") no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      padding: 0;
     }
-
     header {
       text-align: center;
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.75);
+      padding: 30px;
+      background: #222;
+      color: #fff;
     }
-
     header h1 {
-      font-size: 2.5em;
-      color: #00ffcc;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin: 0;
+      color: #00e676;
     }
-
     header p {
-      font-size: 1.1em;
-      color: #ccc;
+      color: #ddd;
     }
-
-    .games {
+    .games-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding: 40px;
-    }
-
-    .game {
-      background: rgba(0,0,0,0.7);
-      border-radius: 15px;
-      text-align: center;
+      gap: 20px;
       padding: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-      transition: transform 0.3s;
     }
-
-    .game:hover {
-      transform: translateY(-8px);
+    .game-card {
+      background: #333;
+      color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.2s;
     }
-
-    .game img {
+    .game-card:hover {
+      transform: scale(1.05);
+    }
+    .game-card img {
       width: 100%;
-      height: 180px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 10px;
     }
-
-    .game h3 {
-      margin: 15px 0 5px;
-      font-size: 1.3em;
+    .game-card .content {
+      padding: 15px;
+      text-align: center;
     }
-
+    .game-card h2 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
     .stars {
       color: gold;
-      font-size: 1.2em;
-      margin: 8px 0;
+      margin-bottom: 10px;
     }
-
     .download-btn {
       display: inline-block;
-      background: #00ffcc;
-      color: #000;
       padding: 10px 20px;
+      background: #00e676;
+      color: #000;
       border-radius: 25px;
-      margin-top: 10px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
     }
-
     .download-btn:hover {
-      background: #00cc99;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.85);
-      font-size: 0.9em;
-      color: #bbb;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>🔥 Exclusive American Games 🔥</h1>
-    <p>20 trending games unavailable on Play Store or App Store, download them now!</p>
-  </header>
-
-  <section class="games">
-    <!-- Game 1 -->
-    <div class="game">
-      <img src="https://cdn2.unrealengine.com/Fortnite%2Fchapter2%2Foverview%2Foverview-1920x1080-1920x1080-696132847.jpg" alt="Fortnite">
-      <h3>Fortnite</h3>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <a href="#" class="download-btn">Download</a>
-    </div>
-
-    <!-- Game 2 -->
-    <div class="game">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/capsule_616x353.jpg" alt="Apex Legends">
-      <h3>Apex Legends Mobile</h3>
-      <div class="stars">⭐⭐⭐⭐☆</div>
-      <a href="#" class="download-btn">Download</a>
-    </div>
-
-    <!-- Game 3 -->
-    <div class="game">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg" alt="PUBG Lite">
-      <h3>PUBG Lite</h3>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <a href="#" class="download-btn">Download</a>
-    </div>
-
-    <!-- Game 4 -->
-    <div class="game">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1938090/header.jpg" alt="COD Mobile">
-      <h3>Call of Duty Mobile</h3>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <a href="#" class="download-btn">Download</a>
-    </div>
-
-    <!-- Game 5 -->
-    <div class="game">
-      <img src="https://i.ytimg.com/vi/Qkf3zFh5S7Y/maxresdefault.jpg" alt="GTA SA">
-      <h3>GTA San Andreas</h3>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <a href="#" class="download-btn">Download</a>
-    </div>
-
-    <!-- Game 6 -->
-    <div class="game">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg" alt="Minecraft">
-      <h3>Minecraft Pocket</h3>
-      <div class="stars">⭐⭐⭐⭐☆</div>
-      <a href="#" class="download-btn">Download</a>
-    </div>
-
-    <!-- Add more games here up to 20 -->
-  </section>
-
-  <footer>
-    <p>© 2025 All Rights Reserved - Exclusive Games Landing Page</p>
-  </footer>
-</body>
-</html>
