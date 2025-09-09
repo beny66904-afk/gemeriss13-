@@ -1,144 +1,15 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlayWorld 🎮 مكتبة الألعاب</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { background-color: #f8fafc; }
-    .star { color: gold; }
-    iframe { border-radius: 12px; margin-top: 8px; }
-  </style>
-</head>
-<body class="font-sans bg-gray-100">
-
-  <!-- هيدر -->
-  <header class="bg-green-600 text-white p-4 flex items-center justify-between shadow-lg">
-    <h1 class="text-2xl font-bold">PlayWorld 🎮</h1>
-    <nav>
-      <a href="#most" class="px-2">🏆 الأكثر تحميلاً</a>
-      <a href="#action" class="px-2">🔫 أكشن</a>
-      <a href="#racing" class="px-2">🚗 سباقات</a>
-      <a href="#puzzle" class="px-2">🧩 ذكاء</a>
-    </nav>
-  </header>
-
-  <!-- قسم الأكثر تحميلاً -->
-  <section id="most" class="p-4">
-    <h2 class="text-2xl font-bold mb-3">🏆 الأكثر تحميلاً</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- GTA V -->
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">GTA V</h3>
-        <p class="text-sm text-gray-600">اللعبة الأسطورية بالعالم المفتوح</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/QkkoHAzjnUs" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
-      <!-- PUBG -->
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/PUBG_New_State_cover.jpg" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">PUBG Mobile</h3>
-        <p class="text-sm text-gray-600">الباتل رويال الأكثر شعبية</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐☆</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/uCd6tbUAy6o" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
+<section id="popular" class="p-4">
+  <h2 class="text-2xl font-bold mb-3">🏆 الأكثر شعبية</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- مثال لعبة -->
+    <div class="bg-white rounded-xl shadow p-3">
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" class="rounded-lg mb-2 w-full">
+      <h3 class="font-bold">GTA V</h3>
+      <p class="text-sm text-gray-600">عالم مفتوح أسطوري</p>
+      <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+      <iframe width="100%" height="180" src="https://www.youtube.com/embed/QkkoHAzjnUs" allowfullscreen></iframe>
+      <button onclick="openLocker()" class="bg-green-600 text-white w-full py-2 mt-3 rounded">⬇️ تحميل</button>
     </div>
-  </section>
-
-  <!-- قسم الأكشن -->
-  <section id="action" class="p-4">
-    <h2 class="text-2xl font-bold mb-3">🔫 ألعاب الأكشن</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Call_of_Duty_Modern_Warfare_II.jpg" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">Call of Duty</h3>
-        <p class="text-sm text-gray-600">إثارة ومعارك حربية</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/r72GP1PIZa0" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/b/bf/Assassin%27s_Creed_Mirage_cover.jpg" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">Assassin's Creed Mirage</h3>
-        <p class="text-sm text-gray-600">عالم الحشاشين الأسطوري</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐☆</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/x55lAlFtXmw" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- قسم السباقات -->
-  <section id="racing" class="p-4">
-    <h2 class="text-2xl font-bold mb-3">🚗 ألعاب السباقات</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Need_for_Speed_Unbound_cover.jpg" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">Need for Speed Unbound</h3>
-        <p class="text-sm text-gray-600">سباقات مجنونة بالليل</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/H2Y8XCe7F9E" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/00/Forza_Horizon_5_cover_art.jpg" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">Forza Horizon 5</h3>
-        <p class="text-sm text-gray-600">جرافيك أسطوري وسيارات خارقة</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐☆</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/FYH9n37B7Yw" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- قسم الذكاء -->
-  <section id="puzzle" class="p-4">
-    <h2 class="text-2xl font-bold mb-3">🧩 ألعاب الذكاء</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/20/Candy_Crush_Saga_logo.png" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">Candy Crush</h3>
-        <p class="text-sm text-gray-600">الألغاز الشهيرة الملونة</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐☆</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/J3I2N0eCJ-Y" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
-      <div class="bg-white rounded-xl shadow p-3">
-        <img src="https://upload.wikimedia.org/wikipedia/en/1/1d/Monument_Valley_gameplay.png" class="rounded-lg mb-2 w-full">
-        <h3 class="font-bold">Monument Valley</h3>
-        <p class="text-sm text-gray-600">ألغاز فنية مع جرافيك مبدع</p>
-        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/wC1jHHF_Wjo" allowfullscreen></iframe>
-        <button onclick="showLocker()" class="bg-green-600 text-white w-full py-1 mt-2 rounded">⬇️ تحميل</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Content Locker -->
-  <div id="locker" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-    <div class="bg-white text-center p-6 rounded-xl max-w-sm">
-      <h2 class="text-xl font-bold text-red-600 mb-3">⚠️ قبل التحميل</h2>
-      <p class="text-gray-700 mb-4">تواصل معنا باش تكمل التحميل 👇</p>
-      <a href="https://t.me/YOURCONTACT" class="bg-green-600 text-white px-4 py-2 rounded block mb-2">📩 تيليجرام</a>
-      <a href="mailto:youremail@example.com" class="bg-yellow-600 text-white px-4 py-2 rounded block">📧 إيميل</a>
-      <button onclick="hideLocker()" class="block mt-3 text-gray-500">❌ إلغاء</button>
-    </div>
+    <!-- نكرر الكارد... -->
   </div>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center py-4 mt-6">
-    <p>© 2025 PlayWorld | جميع الحقوق محفوظة</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    function showLocker() { document.getElementById('locker').classList.remove('hidden'); }
-    function hideLocker() { document.getElementById('locker').classList.add('hidden'); }
-  </script>
-
-</body>
-      </html>
+</section>
