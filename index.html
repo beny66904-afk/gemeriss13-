@@ -1,56 +1,233 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🚀 ألعاب أوربا</title>
+  <title>🔥 European Games Hub</title>
   <style>
-    body { background:#0a0a0a; color:#fff; font-family:sans-serif; margin:0; }
-    header { text-align:center; padding:60px 20px; background:linear-gradient(135deg,#ff0077,#7700ff); }
-    header h1 { font-size:2.5rem; text-shadow:0 0 15px #ff0077; }
-    .btn { background:#ff0077; padding:10px 20px; border-radius:6px; color:#fff; text-decoration:none; margin-top:15px; display:inline-block; }
-    section { padding:30px 15px; max-width:1300px; margin:auto; }
-    h2 { text-align:center; color:#ff0077; margin-bottom:30px; text-shadow:0 0 15px #ff0077; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-    .card { background:#1a1a1a; padding:15px; border-radius:10px; box-shadow:0 0 10px #000; text-align:center; transition:.3s; }
-    .card:hover { transform:scale(1.05); box-shadow:0 0 20px #ff0077; }
-    .card img { width:100%; border-radius:8px; }
-    .rating { color:gold; margin:10px 0; }
-    .actions { display:flex; justify-content:space-between; gap:10px; }
-    .actions button { flex:1; background:#ff0077; border:none; padding:8px; border-radius:6px; color:#fff; cursor:pointer; }
-    footer { text-align:center; padding:15px; background:#111; color:#aaa; margin-top:40px; }
+    /* ===== Reset & Body ===== */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+    }
+
+    /* ===== Hero Section ===== */
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #ff0077, #7700ff);
+      box-shadow: 0 0 25px #ff0077;
+      animation: glow 3s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 20px #ff0077; }
+      to   { box-shadow: 0 0 40px #7700ff; }
+    }
+    header h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 0 15px #ff0077, 0 0 25px #7700ff;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      background: #ff0077;
+      padding: 12px 25px;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      box-shadow: 0 0 15px #ff0077;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #7700ff;
+      box-shadow: 0 0 25px #7700ff;
+    }
+
+    /* ===== Games Section ===== */
+    section {
+      padding: 50px 20px;
+      max-width: 1400px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #ff0077;
+      text-shadow: 0 0 15px #ff0077;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px #111;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #ff0077;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .rating {
+      color: gold;
+      margin: 10px 0;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .actions button {
+      flex: 1;
+      background: #ff0077;
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .actions button:hover {
+      background: #7700ff;
+      box-shadow: 0 0 15px #7700ff;
+    }
+
+    /* ===== Modal ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      padding-top: 100px;
+    }
+    .modal-content {
+      margin: auto;
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 25px #ff0077;
+      animation: zoomIn 0.4s;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .modal-content iframe {
+      width: 100%;
+      height: 280px;
+      border-radius: 10px;
+    }
+    .close {
+      float: right;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
+  <!-- Hero -->
   <header>
-    <h1>🔥 أفضل الألعاب جاهزة للتنزيل 🔥</h1>
-    <a href="#games" class="btn">إبدأ التنزيل</a>
+    <h1>🔥 European Games Hub 🔥</h1>
+    <p>Download epic games with stunning quality and experience 🎮</p>
+    <a href="#games" class="btn">Start Downloading</a>
   </header>
 
+  <!-- Games -->
   <section id="games">
-    <h2>🎮 قائمة الألعاب</h2>
+    <h2>🎮 Game Collection</h2>
     <div class="grid" id="gamesGrid"></div>
   </section>
 
+  <!-- Contact Locker -->
+  <div id="locker" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>📩 Contact us to unlock your download</h3>
+      <p><strong>Telegram:</strong> @YourUser</p>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="gameVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
   <footer>
-    © 2025 افضل الألعاب المجانية 🚀 | جميع الحقوق محفوظة
+    © 2025 European Games Hub 🚀 | All rights reserved
   </footer>
 
   <script>
-    // توليد بيانات 200 لعبة
-    const games = [];
-    for (let i = 1; i <= 200; i++) {
-      games.push({
-        name: `لعبة ${i}`,
-        img: "https://via.placeholder.com/300x180?text=Game+"+i,
-        rating: "⭐".repeat(Math.floor(Math.random()*3)+3) + "☆",
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    // Example games array (you can expand to 200+ easily)
+    const games = [
+      {
+        name: "Cyberpunk 2077",
+        img: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+        rating: "⭐⭐⭐⭐⭐",
+        video: "https://www.youtube.com/embed/qIcTM8WXFjk",
         download: "#"
-      });
-    }
+      },
+      {
+        name: "The Witcher 3",
+        img: "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
+        rating: "⭐⭐⭐⭐⭐",
+        video: "https://www.youtube.com/embed/c0i88t0Kacs",
+        download: "#"
+      },
+      {
+        name: "Europa Universalis IV",
+        img: "https://cdn.cloudflare.steamstatic.com/steam/apps/236850/header.jpg",
+        rating: "⭐⭐⭐⭐☆",
+        video: "https://www.youtube.com/embed/7cWxJ7lStfU",
+        download: "#"
+      },
+      {
+        name: "F1 2023",
+        img: "https://cdn.cloudflare.steamstatic.com/steam/apps/2108330/header.jpg",
+        rating: "⭐⭐⭐⭐☆",
+        video: "https://www.youtube.com/embed/7pCFd4lLQ9E",
+        download: "#"
+      }
+    ];
 
     const grid = document.getElementById("gamesGrid");
-
     games.forEach(game => {
       const card = document.createElement("div");
       card.className = "card";
@@ -59,12 +236,40 @@
         <h3>${game.name}</h3>
         <div class="rating">${game.rating}</div>
         <div class="actions">
-          <button onclick="alert('تنزيل ${game.name}')">تنزيل</button>
-          <button onclick="window.open('${game.video}','_blank')">🎥 فيديو</button>
+          <button onclick="openLocker()">Download</button>
+          <button onclick="openVideo('${game.video}')">🎥 Video</button>
         </div>
       `;
       grid.appendChild(card);
     });
+
+    // Locker & Video Modals
+    const locker = document.getElementById("locker");
+    const videoModal = document.getElementById("videoModal");
+    const videoFrame = document.getElementById("gameVideo");
+    const closeBtns = document.querySelectorAll(".close");
+
+    function openLocker() {
+      locker.style.display = "block";
+    }
+    function openVideo(url) {
+      videoFrame.src = url;
+      videoModal.style.display = "block";
+    }
+    closeBtns.forEach(btn => {
+      btn.onclick = () => {
+        locker.style.display = "none";
+        videoModal.style.display = "none";
+        videoFrame.src = "";
+      };
+    });
+    window.onclick = e => {
+      if (e.target == locker || e.target == videoModal) {
+        locker.style.display = "none";
+        videoModal.style.display = "none";
+        videoFrame.src = "";
+      }
+    };
   </script>
 </body>
 </html>
