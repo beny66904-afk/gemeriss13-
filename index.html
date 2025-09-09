@@ -1,182 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>European Games Hub</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(180deg, #ff00cc, #111);
-      color: #fff;
-      text-align: center;
-    }
-    header {
-      padding: 50px 20px;
-      background: linear-gradient(90deg, #ff007f, #ff6600);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      animation: fadeInDown 1s ease;
-    }
-    header p {
-      margin: 10px 0;
-      animation: fadeIn 1.5s ease;
-    }
-    .btn-main {
-      background: #ff007f;
-      border: none;
-      padding: 14px 30px;
-      border-radius: 50px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 1rem;
-      margin-top: 15px;
-      transition: all 0.3s ease;
-    }
-    .btn-main:hover {
-      background: #ff3399;
-      transform: scale(1.1);
-    }
-    .game-collection {
-      padding: 40px 20px;
-    }
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      margin-top: 20px;
-      animation: fadeInUp 1s ease;
-    }
-    .game-card {
-      background: #222;
-      border-radius: 15px;
-      padding: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .game-card:hover {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 10px 20px rgba(255,0,127,0.6);
-    }
-    .game-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .game-card h3 {
-      margin: 12px 0 5px;
-      font-size: 1rem;
-      min-height: 40px;
-    }
-    .stars {
-      margin: 6px 0;
-      color: gold;
-      font-size: 1.1rem;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 6px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(90deg,#ff007f,#ff6600);
-      color: #fff;
-      cursor: pointer;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
-      transform: scale(1.1);
-      background: linear-gradient(90deg,#ff3399,#ff8800);
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
+  <title>🔥 أفضل ألعاب جديدة 2025 🔥</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>🔥 European Games Hub 🔥</h1>
-    <p>Download epic PC and console games with stunning quality 🎮</p>
-    <button class="btn-main">Start Downloading</button>
+<body class="bg-gray-900 text-white">
+  <!-- العنوان -->
+  <header class="text-center py-8">
+    <h1 class="text-4xl font-bold">🚀 حمل أفضل ألعاب جديدة 🚀</h1>
+    <p class="text-lg text-gray-300">جرب أشهر الألعاب بجودة عالية</p>
   </header>
 
-  <section class="game-collection">
-    <h2>🎮 Game Collection</h2>
-    <div class="games-grid" id="games-container">
-      <!-- Games will load here -->
+  <!-- شبكة الألعاب -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+    <!-- لعبة 1 -->
+    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+      <img src="game1.jpg" alt="Game 1" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h2 class="text-xl font-bold">اسم اللعبة 1</h2>
+        <p class="text-gray-400 text-sm">تقييم: ⭐⭐⭐⭐☆</p>
+        <button onclick="showLocker()" class="bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg mt-3 w-full">
+          ⬇️ تحميل
+        </button>
+      </div>
     </div>
+
+    <!-- لعبة 2 -->
+    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+      <img src="game2.jpg" alt="Game 2" class="w-full h-56 object-cover">
+      <div class="p-4">
+        <h2 class="text-xl font-bold">اسم اللعبة 2</h2>
+        <p class="text-gray-400 text-sm">تقييم: ⭐⭐⭐⭐⭐</p>
+        <button onclick="showLocker()" class="bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg mt-3 w-full">
+          ⬇️ تحميل
+        </button>
+      </div>
+    </div>
+
+    <!-- كرر البلوك باش تزيد ألعاب أخرى -->
   </section>
 
+  <!-- Content Locker -->
+  <div id="locker" class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center">
+    <div class="bg-white text-black p-6 rounded-lg text-center max-w-sm">
+      <h3 class="text-xl font-bold mb-4">🔒 باش تكمل التحميل</h3>
+      <p class="mb-4">سجّل دخول / شارك باش يبان ليك الرابط</p>
+      <button onclick="hideLocker()" class="bg-red-500 text-white px-4 py-2 rounded-lg">✖ إغلاق</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
-    // Example list (you can expand to 200+)
-    const games = [
-      {
-        title: "Cyberpunk 2077",
-        img: "https://via.placeholder.com/400x200.png?text=Cyberpunk+2077"
-      },
-      {
-        title: "The Witcher 3: Wild Hunt",
-        img: "https://via.placeholder.com/400x200.png?text=Witcher+3"
-      },
-      {
-        title: "Red Dead Redemption 2",
-        img: "https://via.placeholder.com/400x200.png?text=RDR2"
-      },
-      {
-        title: "Elden Ring",
-        img: "https://via.placeholder.com/400x200.png?text=Elden+Ring"
-      },
-      {
-        title: "Assassin's Creed Valhalla",
-        img: "https://via.placeholder.com/400x200.png?text=AC+Valhalla"
-      },
-      {
-        title: "FIFA 24",
-        img: "https://via.placeholder.com/400x200.png?text=FIFA+24"
-      },
-      {
-        title: "Far Cry 6",
-        img: "https://via.placeholder.com/400x200.png?text=Far+Cry+6"
-      },
-      {
-        title: "Hitman 3",
-        img: "https://via.placeholder.com/400x200.png?text=Hitman+3"
-      }
-      // 👉 Add up to 200 games here
-    ];
-
-    const cpaLink = "https://your-cpa-locker-link.com"; // Replace with your CPA locker
-
-    const container = document.getElementById("games-container");
-
-    games.forEach((game) => {
-      const card = document.createElement("div");
-      card.className = "game-card";
-      card.innerHTML = `
-        <img src="${game.img}" alt="${game.title}">
-        <h3>${game.title}</h3>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <a href="${cpaLink}" class="btn">Download</a>
-      `;
-      container.appendChild(card);
-    });
+    function showLocker() {
+      document.getElementById('locker').classList.remove('hidden');
+    }
+    function hideLocker() {
+      document.getElementById('locker').classList.add('hidden');
+    }
   </script>
 </body>
 </html>
