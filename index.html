@@ -1,64 +1,105 @@
-<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html><html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔥 أفضل ألعاب جديدة 2025 🔥</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>أشهر ألعاب أوروبا - تنزيل مجاني</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      margin: 0;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: url('https://i.ibb.co/2vppPcH/games-bg.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffcc;
+      text-shadow: 2px 2px 6px #000;
+    }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 30px;
+    }
+    .game-card {
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .game-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .game-card h3 {
+      margin: 10px 0 5px;
+    }
+    .rating {
+      color: gold;
+      margin-bottom: 10px;
+    }
+    .download-btn {
+      background: #00ff66;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #00cc52;
+    }
+    .videos {
+      padding: 30px;
+      text-align: center;
+    }
+    .videos iframe {
+      width: 300px;
+      height: 170px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
-  <!-- العنوان -->
-  <header class="text-center py-8">
-    <h1 class="text-4xl font-bold">🚀 حمل أفضل ألعاب جديدة 🚀</h1>
-    <p class="text-lg text-gray-300">جرب أشهر الألعاب بجودة عالية</p>
-  </header>
+<body>  <header>
+    <h1>حمّل أشهر ألعاب أوروبا الآن - مجاناً!</h1>
+  </header>  <section class="games-grid">
+    <div class="game-card">
+      <img src="https://i.ibb.co/Q8vbxk2/game1.jpg" alt="Game 1">
+      <h3>FIFA 23</h3>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <button class="download-btn" onclick="openLocker()">تنزيل اللعبة</button>
+    </div><div class="game-card">
+  <img src="https://i.ibb.co/3hp28np/game2.jpg" alt="Game 2">
+  <h3>GTA V</h3>
+  <div class="rating">⭐⭐⭐⭐☆</div>
+  <button class="download-btn" onclick="openLocker()">تنزيل اللعبة</button>
+</div>
 
-  <!-- شبكة الألعاب -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-    <!-- لعبة 1 -->
-    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
-      <img src="game1.jpg" alt="Game 1" class="w-full h-56 object-cover">
-      <div class="p-4">
-        <h2 class="text-xl font-bold">اسم اللعبة 1</h2>
-        <p class="text-gray-400 text-sm">تقييم: ⭐⭐⭐⭐☆</p>
-        <button onclick="showLocker()" class="bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg mt-3 w-full">
-          ⬇️ تحميل
-        </button>
-      </div>
-    </div>
+<div class="game-card">
+  <img src="https://i.ibb.co/R4FbGqq/game3.jpg" alt="Game 3">
+  <h3>Call of Duty</h3>
+  <div class="rating">⭐⭐⭐⭐⭐</div>
+  <button class="download-btn" onclick="openLocker()">تنزيل اللعبة</button>
+</div>
 
-    <!-- لعبة 2 -->
-    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
-      <img src="game2.jpg" alt="Game 2" class="w-full h-56 object-cover">
-      <div class="p-4">
-        <h2 class="text-xl font-bold">اسم اللعبة 2</h2>
-        <p class="text-gray-400 text-sm">تقييم: ⭐⭐⭐⭐⭐</p>
-        <button onclick="showLocker()" class="bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg mt-3 w-full">
-          ⬇️ تحميل
-        </button>
-      </div>
-    </div>
-
-    <!-- كرر البلوك باش تزيد ألعاب أخرى -->
-  </section>
-
-  <!-- Content Locker -->
-  <div id="locker" class="fixed inset-0 bg-black bg-opacity-90 hidden flex items-center justify-center">
-    <div class="bg-white text-black p-6 rounded-lg text-center max-w-sm">
-      <h3 class="text-xl font-bold mb-4">🔒 باش تكمل التحميل</h3>
-      <p class="mb-4">سجّل دخول / شارك باش يبان ليك الرابط</p>
-      <button onclick="hideLocker()" class="bg-red-500 text-white px-4 py-2 rounded-lg">✖ إغلاق</button>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script>
-    function showLocker() {
-      document.getElementById('locker').classList.remove('hidden');
-    }
-    function hideLocker() {
-      document.getElementById('locker').classList.add('hidden');
-    }
-  </script>
-</body>
-</html>
+  </section>  <section class="videos">
+    <h2>شاهد لقطات من الألعاب 🎮</h2>
+    <iframe src="https://www.youtube.com/embed/ooyjaV
