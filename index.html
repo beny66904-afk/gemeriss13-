@@ -1,15 +1,202 @@
-<section id="popular" class="p-4">
-  <h2 class="text-2xl font-bold mb-3">🏆 الأكثر شعبية</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <!-- مثال لعبة -->
-    <div class="bg-white rounded-xl shadow p-3">
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" class="rounded-lg mb-2 w-full">
-      <h3 class="font-bold">GTA V</h3>
-      <p class="text-sm text-gray-600">عالم مفتوح أسطوري</p>
-      <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-      <iframe width="100%" height="180" src="https://www.youtube.com/embed/QkkoHAzjnUs" allowfullscreen></iframe>
-      <button onclick="openLocker()" class="bg-green-600 text-white w-full py-2 mt-3 rounded">⬇️ تحميل</button>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 أفضل ألعاب أوربا 🚀</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #ff0077, #7700ff);
+      box-shadow: 0 0 25px #ff0077;
+    }
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #ff0077, 0 0 20px #7700ff;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    .btn {
+      display: inline-block;
+      background: #ff0077;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px #ff0077;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #7700ff;
+      box-shadow: 0 0 25px #7700ff;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #ff0077;
+      text-shadow: 0 0 15px #ff0077;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px #111;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #ff0077;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .rating {
+      color: gold;
+      margin: 10px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      padding-top: 100px;
+    }
+    .modal-content {
+      margin: auto;
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 25px #ff0077;
+    }
+    .modal-content iframe {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .close {
+      float: right;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header>
+    <h1>🔥 أفضل ألعاب أوربا بين يديك 🔥</h1>
+    <p>نزّل ألعاب بجودة عالية وتجربة أسطورية 🎮</p>
+    <a href="#games" class="btn">إبدأ التنزيل</a>
+  </header>
+
+  <!-- Games -->
+  <section id="games">
+    <h2>🎮 قائمة الألعاب</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180" alt="لعبة 1">
+        <h3>لعبة 1</h3>
+        <div class="rating">⭐⭐⭐⭐☆</div>
+        <button class="btn download-btn">تنزيل</button>
+        <button class="btn video-btn" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">🎥 فيديو</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180" alt="لعبة 2">
+        <h3>لعبة 2</h3>
+        <div class="rating">⭐⭐⭐☆☆</div>
+        <button class="btn download-btn">تنزيل</button>
+        <button class="btn video-btn" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">🎥 فيديو</button>
+      </div>
     </div>
-    <!-- نكرر الكارد... -->
+  </section>
+
+  <!-- Contact Locker -->
+  <div id="locker" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>📩 باش تحمّل اللعبة خاصك تتواصل معانا</h3>
+      <p><strong>Telegram:</strong> @YourUser</p>
+    </div>
   </div>
-</section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="gameVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 ألعاب أوربا 🚀 | جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    const locker = document.getElementById("locker");
+    const videoModal = document.getElementById("videoModal");
+    const videoFrame = document.getElementById("gameVideo");
+    const closeButtons = document.querySelectorAll(".close");
+
+    document.querySelectorAll(".download-btn").forEach(btn => {
+      btn.addEventListener("click", () => locker.style.display = "block");
+    });
+
+    document.querySelectorAll(".video-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        videoFrame.src = btn.dataset.video;
+        videoModal.style.display = "block";
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        locker.style.display = "none";
+        videoModal.style.display = "none";
+        videoFrame.src = "";
+      });
+    });
+
+    window.onclick = e => {
+      if (e.target == locker || e.target == videoModal) {
+        locker.style.display = "none";
+        videoModal.style.display = "none";
+        videoFrame.src = "";
+      }
+    };
+  </script>
+</body>
+  </html>
