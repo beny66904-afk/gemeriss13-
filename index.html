@@ -1,47 +1,163 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎮 Gaming Hub - أفضل الألعاب المجانية</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-</head>
-<body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans">
+  <title>تحميل ألعاب أوروبية مشهورة</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
 
-  <!-- Hero Section -->
-  <section class="relative h-[60vh] flex items-center justify-center text-center bg-cover bg-center"
-           style="background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1600&q=80');">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative z-10">
-      <h1 class="text-5xl font-extrabold">🔥 Gaming Hub</h1>
-      <p class="mt-4 text-xl text-gray-300">اكتشف أفضل الألعاب المجانية في أوربا 🚀</p>
-      <a href="#games" class="mt-6 inline-block bg-blue-600 hover:bg-blue-800 px-6 py-3 rounded-2xl shadow-lg">إكتشف الآن</a>
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ddd;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .game {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .game:hover {
+      transform: translateY(-5px);
+    }
+
+    .game img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .game h3 {
+      margin: 10px 0;
+    }
+
+    .stars {
+      color: gold;
+      margin: 5px 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 10px 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #00cc99;
+    }
+
+    .videos {
+      padding: 40px;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .videos h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 12px;
+      height: 200px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+      font-size: 0.9em;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔥 ألعاب أوروبية مشهورة وحصرية 🔥</h1>
+    <p>حمّل أحدث الألعاب خارج المتاجر الرسمية مباشرة!</p>
+  </header>
+
+  <section class="games">
+    <div class="game">
+      <img src="https://via.placeholder.com/400x200?text=Game+1" alt="Game 1">
+      <h3>لعبة 1</h3>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <a href="#" class="download-btn" onclick="showLocker()">تنزيل الآن</a>
+    </div>
+
+    <div class="game">
+      <img src="https://via.placeholder.com/400x200?text=Game+2" alt="Game 2">
+      <h3>لعبة 2</h3>
+      <div class="stars">⭐⭐⭐☆☆</div>
+      <a href="#" class="download-btn" onclick="showLocker()">تنزيل الآن</a>
+    </div>
+
+    <div class="game">
+      <img src="https://via.placeholder.com/400x200?text=Game+3" alt="Game 3">
+      <h3>لعبة 3</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <a href="#" class="download-btn" onclick="showLocker()">تنزيل الآن</a>
     </div>
   </section>
 
-  <!-- Games Grid -->
-  <main id="games" class="px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Game Card -->
-    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition duration-300">
-      <div class="relative">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/FortniteCover.jpg" 
-             alt="Fortnite" class="w-full h-56 object-cover">
-        <button onclick="openVideo('https://www.youtube.com/embed/2gUtfBmw86Y')" 
-                class="absolute bottom-3 right-3 bg-blue-600 hover:bg-blue-800 p-2 rounded-full">
-          ▶
-        </button>
-      </div>
-      <div class="p-4 text-center">
-        <h2 class="text-2xl font-bold">Fortnite</h2>
-        <p class="text-yellow-400 flex justify-center gap-1 mt-2">
-          <i class="ph-star-fill"></i><i class="ph-star-fill"></i><i class="ph-star-fill"></i><i class="ph-star-fill"></i><i class="ph-star"></i>
-        </p>
-        <a href="https://www.epicgames.com/fortnite" target="_blank" 
-           class="mt-4 inline-block bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded-xl">تحميل</a>
-      </div>
+  <section class="videos">
+    <h2>🎥 شاهد لقطات الألعاب</h2>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" allowfullscreen></iframe>
     </div>
+  </section>
 
-    <!-- Game 2 -->
-    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl transform hover
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة - صفحة هبوط للألعاب</p>
+  </footer>
+
+  <script>
+    function showLocker() {
+      alert("هنا خاصك تربط Content Locker (CPAlead, OGAds...).");
+      // هنا تحط الكود ديال الكونتنت لوكر ديالك
+    }
+  </script>
+</body>
+</html>
