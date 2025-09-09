@@ -1,92 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Games Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EuroGames Hub</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0f0f1a;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #0f0f1a, #1c1f3b);
+      color: #fff;
     }
+
     header {
       text-align: center;
-      padding: 20px;
-      background: #1a1a2e;
+      padding: 30px 20px;
+      background: #161a2d;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.6);
     }
     header h1 {
-      color: #fff;
+      font-size: 34px;
+      margin: 0;
+      color: #ffcc00;
+      text-transform: uppercase;
+    }
+    header p {
+      margin: 5px 0 0;
+      color: #bbb;
+      font-size: 16px;
+    }
+
+    .games-section {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
     .games-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 15px;
-      padding: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
     }
+
     .game-card {
-      background: #1e1e2f;
-      border-radius: 12px;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0px 3px 8px rgba(0,0,0,0.5);
-      transition: 0.3s;
+      background: #1e223d;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+      transition: transform 0.3s;
     }
     .game-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
     }
     .game-card img {
       width: 100%;
-      border-radius: 10px;
+      height: 140px;
+      object-fit: cover;
     }
-    .game-card h3 {
-      margin: 10px 0;
-      font-size: 16px;
+    .game-card iframe {
+      width: 100%;
+      height: 150px;
+      border: none;
+    }
+    .game-info {
+      padding: 12px;
+      text-align: center;
+    }
+    .game-info h3 {
+      margin: 5px 0;
+      font-size: 18px;
+      color: #fff;
+    }
+    .rating {
+      margin: 6px 0;
+      color: #ffcc00;
+      font-size: 14px;
     }
     .download-btn {
       display: inline-block;
       margin-top: 8px;
-      padding: 8px 12px;
-      background: #6c5ce7;
+      padding: 10px 16px;
+      background: linear-gradient(135deg, #ff6b6b, #d63031);
       color: white;
       border-radius: 8px;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: 0.3s;
     }
     .download-btn:hover {
-      background: #4834d4;
+      background: linear-gradient(135deg, #e84393, #ff7675);
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #161a2d;
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Free Games Hub</h1>
-    <p>Play and download exclusive games!</p>
+    <h1>EuroGames Hub</h1>
+    <p>Exclusive trending games in Europe – Download & Play now!</p>
   </header>
 
-  <section class="games-grid">
-    <div class="game-card">
-      <img src="https://via.placeholder.com/150" alt="Game 1">
-      <h3>Zombie Escape</h3>
-      <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
-    </div>
-    <div class="game-card">
-      <img src="https://via.placeholder.com/150" alt="Game 2">
-      <h3>Space Adventure</h3>
-      <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
-    </div>
-    <div class="game-card">
-      <img src="https://via.placeholder.com/150" alt="Game 3">
-      <h3>Car Racing X</h3>
-      <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
-    </div>
-    <div class="game-card">
-      <img src="https://via.placeholder.com/150" alt="Game 4">
-      <h3>Dragon Quest</h3>
-      <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
+  <section class="games-section">
+    <div class="games-grid">
+      <!-- Game 1 -->
+      <div class="game-card">
+        <img src="https://picsum.photos/300/200?random=10" alt="Game Thumbnail">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        <div class="game-info">
+          <h3>Battle Heroes</h3>
+          <div class="rating">⭐⭐⭐⭐☆</div>
+          <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
+        </div>
+      </div>
+      <!-- Game 2 -->
+      <div class="game-card">
+        <img src="https://picsum.photos/300/200?random=11" alt="Game Thumbnail">
+        <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0"></iframe>
+        <div class="game-info">
+          <h3>Racing Legends</h3>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+          <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
+        </div>
+      </div>
+      <!-- Game 3 -->
+      <div class="game-card">
+        <img src="https://picsum.photos/300/200?random=12" alt="Game Thumbnail">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+        <div class="game-info">
+          <h3>Zombie Survival</h3>
+          <div class="rating">⭐⭐⭐⭐☆</div>
+          <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
+        </div>
+      </div>
+      <!-- Game 4 -->
+      <div class="game-card">
+        <img src="https://picsum.photos/300/200?random=13" alt="Game Thumbnail">
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4"></iframe>
+        <div class="game-info">
+          <h3>Dragon Quest X</h3>
+          <div class="rating">⭐⭐⭐☆☆</div>
+          <a href="YOUR_CPA_LOCKER_LINK" class="download-btn">Download</a>
+        </div>
+      </div>
     </div>
   </section>
+
+  <footer>
+    © 2025 EuroGames Hub. All rights reserved.
+  </footer>
+
 </body>
 </html>
