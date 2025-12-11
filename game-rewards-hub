@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Unlock Free Game Rewards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0d0d0d;
+        color: #fff;
+        text-align: center;
+    }
+    .hero {
+        background: url('https://i.imgur.com/Vz81GEl.jpeg') center/cover no-repeat;
+        padding: 120px 20px;
+    }
+    .hero h1 {
+        font-size: 42px;
+        font-weight: bold;
+        text-shadow: 0 0 10px #000;
+    }
+    .hero p {
+        font-size: 18px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px #000;
+    }
+    .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 15px 35px;
+        background: #ff4500;
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background: #e63e00;
+    }
+    .section {
+        padding: 50px 20px;
+    }
+    .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .card {
+        background: #1a1a1a;
+        width: 260px;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px #000;
+    }
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .card h3 {
+        margin-top: 15px;
+        font-size: 22px;
+    }
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>Unlock Exclusive Game Rewards</h1>
+    <p>Complete an easy offer to get your free gaming item.</p>
+    <a href="#" class="btn">Start Now</a>
+</div>
+
+<div class="section">
+    <h2>Popular Rewards</h2>
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://i.imgur.com/fZ9PqsJ.jpeg" alt="Fortnite">
+            <h3>Fortnite V-Bucks</h3>
+            <p>Get free V-Bucks for your Fortnite account.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/zs4UzvM.jpeg" alt="PUBG">
+            <h3>PUBG UC</h3>
+            <p>Unlock free UC credits instantly.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/XE2yLOq.jpeg" alt="Roblox">
+            <h3>Robux Gift Cards</h3>
+            <p>Earn Robux by completing a quick offer.</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
